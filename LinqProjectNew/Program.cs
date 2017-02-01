@@ -8,7 +8,6 @@ namespace LinqProjectNew
 {
     class Employee
     {
-
         private int sal;
         private int dept;
 
@@ -24,12 +23,12 @@ namespace LinqProjectNew
             listobj.Add(new Employee(2001, 1));
             listobj.Add(new Employee(5000, 2));
             listobj.Add(new Employee(12000, 3));
-            listobj.Add(new Employee(32000, 4));
+            listobj.Add(new Employee(32000, 3));
             listobj.Add(new Employee(8000, 1));
             listobj.Add(new Employee(10000, 2));
             listobj.Add(new Employee(33000, 3));
             listobj.Add(new Employee(9800, 4));
-            listobj.Add(new Employee(72000, 1));
+            listobj.Add(new Employee(72000, 3));
             listobj.Add(new Employee(5500, 2));
             listobj.Add(new Employee(1000, 3));
             listobj.Add(new Employee(2000, 4));
@@ -39,11 +38,9 @@ namespace LinqProjectNew
             listobj.Add(new Employee(2006, 4));
 
             var value = from emp in listobj
-                         where emp.sal >= 20000
-                         group emp by emp.sal into result
-                         select result.Count();
-
-            
+                        where emp.sal >= 20000
+                        group emp by emp.dept into result
+                        select result.Count();
 
             foreach (var element in value)
             {
@@ -53,7 +50,6 @@ namespace LinqProjectNew
 
         }
     }
-
 }
 
 
